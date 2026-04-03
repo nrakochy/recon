@@ -1,0 +1,11 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/*",
+]
+
+
+[workspace.dependencies]
+anyhow = { version = "1.0.102" }
+thiserror = { version = "2.0.18"}
+
