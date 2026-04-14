@@ -18,11 +18,20 @@ pub async fn scan(target: &str) -> Result<(), Error> {
 
     let subdomains = subdomains::enumerate(&http_client, target).await?;
 
-    let _scan_result: Vec<Subdomain> = stream::iter(subdomains.into_iter())
+    let scan_result: Vec<Subdomain> = stream::iter(subdomains.into_iter())
         .map(|subdomain| scan_ports(ports_concurrency, subdomain))
         .buffer_unordered(subdomains_concurrency)
         .collect()
         .await;
+
+    for subdomain in scan_result {
+        println!("{}:", &subdomain.domain);
+        for port in &subdomain.open_ports {
+            println!("    {}", port.port);
+        }
+
+        println!();
+    }
 
     Ok(())
 }

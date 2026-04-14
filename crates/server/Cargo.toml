@@ -10,7 +10,8 @@ sync = ["dep:multithread"]
 async = ["dep:asynced"]
 
 [dependencies]
-multithread = { path = "../multithread", optional = true }
 asynced = { path = "../asynced", optional = true }
+common = { path = "../common" }
 error = { path = "../error" }
+multithread = { path = "../multithread", optional = true }
 tokio = { workspace = true }

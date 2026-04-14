@@ -8,7 +8,7 @@ use tokio::runtime;
 use asynced::scan;
 
 #[cfg(feature = "sync")]
-use multithread::scan;
+use multithread::scan as sync_scan;
 
 fn main() -> Result<(), Error> {
     let args: Vec<String> = args().collect();
@@ -21,7 +21,7 @@ fn main() -> Result<(), Error> {
 
     #[cfg(feature = "sync")]
     {
-        scan(target)
+        sync_scan(target)
     }
 
     #[cfg(feature = "async")]
