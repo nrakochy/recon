@@ -501,6 +501,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "multithread"
+version = "0.1.0"
+dependencies = [
+ "error",
+ "rayon",
+ "reqwest",
+ "serde",
+ "trust-dns-resolver",
+]
+
+[[package]]
 name = "once_cell"
 version = "1.21.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -682,17 +693,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
 
 [[package]]
-name = "scanner"
-version = "0.1.0"
-dependencies = [
- "error",
- "rayon",
- "reqwest",
- "serde",
- "trust-dns-resolver",
-]
-
-[[package]]
 name = "scopeguard"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -746,7 +746,7 @@ name = "server"
 version = "0.1.0"
 dependencies = [
  "error",
- "scanner",
+ "multithread",
 ]
 
 [[package]]

@@ -5,5 +5,5 @@ edition = "2024"
 publish = ["artifactory"]
 
 [dependencies]
-scanner = { path = "../scanner"}
+multithread = { path = "../multithread"}
 error = { path = "../error"}

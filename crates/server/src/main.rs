@@ -1,5 +1,5 @@
 use error::Error;
-use scanner::scan;
+use multithread::scan;
 use std::env::args;
 
 fn main() -> Result<(), Error> {
