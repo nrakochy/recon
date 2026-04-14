@@ -5,4 +5,11 @@ edition = "2024"
 publish = ["artifactory"]
 
 [dependencies]
+anyhow = { workspace = true }
 common = { path = "../common" }
+error = { path = "../error" }
+futures = "0.3.32"
+reqwest = { workspace = true }
+tokio = { workspace = true }
+tokio-stream =  { workspace = true }
+trust-dns-resolver = { workspace = true }

@@ -8,6 +8,6 @@ publish = ["artifactory"]
 error = { path = "../error" } 
 common = { path = "../common" } 
 rayon = "1.11.0"
-reqwest = { version = "0.13.2", default-features = false, features = ["json", "blocking"] }
+reqwest = { workspace = true }
 serde =  { workspace = true }
-trust-dns-resolver = "0.23.2"
+trust-dns-resolver = { workspace = true }
