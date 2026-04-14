@@ -1,5 +1,5 @@
-use crate::constants::MOST_COMMON_PORTS;
-use crate::model::{Port, Subdomain};
+use common::constants::MOST_COMMON_PORTS;
+use common::model::{Port, Subdomain};
 use rayon::prelude::*;
 use std::net::{SocketAddr, ToSocketAddrs};
 use std::{net::TcpStream, time::Duration};

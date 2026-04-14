@@ -1,7 +1,5 @@
-use crate::{
-    Error,
-    model::{CrtShEntry, Subdomain},
-};
+use crate::Error;
+use common::model::{CrtShEntry, Subdomain};
 use reqwest::blocking::Client;
 use std::{collections::HashSet, time::Duration};
 use trust_dns_resolver::{

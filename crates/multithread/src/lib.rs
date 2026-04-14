@@ -1,11 +1,10 @@
+use common::model::Subdomain;
 use error::Error;
 use rayon::prelude::*;
 use reqwest::blocking::Client;
 use reqwest::redirect;
 use std::time::Duration;
 
-mod constants;
-mod model;
 mod ports;
 mod subdomains;
 
@@ -24,7 +23,7 @@ pub fn scan(target: &str) -> Result<(), error::Error> {
 
     // pool.install is required to use our custom threadpool, instead of rayon's default one
     pool.install(|| {
-        let scan_result: Vec<model::Subdomain> = subdomains::enumerate(&http_client, target)
+        let scan_result: Vec<Subdomain> = subdomains::enumerate(&http_client, target)
             .unwrap()
             .into_par_iter()
             .map(ports::scan_ports)
