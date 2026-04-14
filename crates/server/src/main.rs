@@ -21,7 +21,7 @@ fn main() -> Result<(), Error> {
 
     #[cfg(feature = "sync")]
     {
-        sync_scan(target)
+        sync_scan(target)?
     }
 
     #[cfg(feature = "async")]
